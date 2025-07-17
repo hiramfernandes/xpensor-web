@@ -111,7 +111,7 @@ function App() {
     <>
       <div className="card">
         <Banner headerText="Xpensor Managing Payments" />
-        <ExpenseList expenditures={expenditures} />
+        <ExpenseList expenses={expenditures} />
       </div>
     </>
   )

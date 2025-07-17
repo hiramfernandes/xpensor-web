@@ -1,4 +1,5 @@
-const ExpenseList = () => {
+const ExpenseList = ({expenses}) => {
+    console.log(expenses)
     return (
         <>
             <div className="row mb-2">
@@ -10,18 +11,22 @@ const ExpenseList = () => {
                 <thead>
                     <th>Expense</th>
                     <th>Due Date</th>
+                    <th>Value</th>
                     <th>Info</th>
                     <th>Paid</th>
                     <th>Paid Date</th>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Expense</td>
-                        <td>Due Date</td>
-                        <td>Info</td>
-                        <td>Paid</td>
-                        <td>Paid Date</td>
-                    </tr>
+                    {expenses.map(expense => (
+                        <tr key={expense.id}>
+                            <td>{expense.expenseName}</td>
+                            <td>{expense.dueDate}</td>
+                            <td>{expense.value}</td>
+                            <td>{expense.generalInfo}</td>
+                            <td>{expense.paid}</td>
+                            <td>{expense.paymentDate}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </>
