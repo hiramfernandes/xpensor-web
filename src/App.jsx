@@ -1,6 +1,7 @@
-import { useState } from 'react'
-import './App.css'
 import ExpensesList from './components/ExpensesList';
+import Banner from './components/Banner';
+
+import "./App.css"
 
 function App() {
   const expenditures =
@@ -108,10 +109,8 @@ function App() {
 
   return (
     <>
-      <div>
-        <h1>Xpensor - Payments</h1>
-      </div>
       <div className="card">
+        <Banner/>
         <ExpensesList />
       </div>
     </>
