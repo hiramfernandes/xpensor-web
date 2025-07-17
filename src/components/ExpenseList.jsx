@@ -1,9 +1,12 @@
-const ExpensesList = () => {
+const ExpenseList = () => {
     return (
         <>
-            <div>Month: 07</div>
-            <div>Year: 2025</div>
-            <table className='table table-striped'>
+            <div className="row mb-2">
+                <h5 className="themeFontColor text-center">
+                    Expenses for 07/2025
+                </h5>
+            </div>
+            <table className='table table-hover'>
                 <thead>
                     <th>Expense</th>
                     <th>Due Date</th>
@@ -25,4 +28,4 @@ const ExpensesList = () => {
     );
 }
 
-export default ExpensesList;
+export default ExpenseList;

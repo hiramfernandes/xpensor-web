@@ -1,4 +1,4 @@
-import ExpensesList from './components/ExpensesList';
+import ExpenseList from './components/ExpenseList';
 import Banner from './components/Banner';
 
 import "./App.css"
@@ -110,8 +110,8 @@ function App() {
   return (
     <>
       <div className="card">
-        <Banner/>
-        <ExpensesList />
+        <Banner headerText="Xpensor Managing Payments" />
+        <ExpenseList expenditures={expenditures} />
       </div>
     </>
   )
