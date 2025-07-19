@@ -1,3 +1,5 @@
+import ExpenseRow from "./ExpenseRow"
+
 const ExpenseList = ({expenses}) => {
     console.log(expenses)
     return (
@@ -16,17 +18,10 @@ const ExpenseList = ({expenses}) => {
                     <th>Paid</th>
                     <th>Paid Date</th>
                 </thead>
-                <tbody>
-                    {expenses.map(expense => (
-                        <tr key={expense.id}>
-                            <td>{expense.expenseName}</td>
-                            <td>{expense.dueDate}</td>
-                            <td>{expense.value}</td>
-                            <td>{expense.generalInfo}</td>
-                            <td>{expense.paid}</td>
-                            <td>{expense.paymentDate}</td>
-                        </tr>
-                    ))}
+                <tbody> 
+                    {expenses.map(expense => 
+                        <ExpenseRow key={expense.id} expense={expense} /> 
+                    )}
                 </tbody>
             </table>
         </>
