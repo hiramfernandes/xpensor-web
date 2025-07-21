@@ -1,14 +1,19 @@
+import { useState } from 'react';
+
 import ExpenseList from './components/ExpenseList';
 import Banner from './components/Banner';
-
-import "./App.css"
+import Expense from './components/Expense';
 
 function App() {
+  const [selectedExpense, setSelectedExpense] = useState(false)
+
   return (
     <>
       <div className="card">
         <Banner headerText="Xpensor Managing Payments" />
-        <ExpenseList />
+        {
+            selectedExpense ? <Expense /> : <ExpenseList />
+        }
       </div>
     </>
   )
