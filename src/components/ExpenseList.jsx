@@ -107,8 +107,9 @@ const expensesArray =
 
 const ExpenseList = () => {
     const [expenses, setExpenses] = useState(expensesArray);
+
     const addExpense = () => {
-        setExpenses(
+        setExpenses([
             ...expenses,
             {
                 "id": "e4c299f0-4dad-4ec9-92f1-07c0675418cd",
@@ -119,7 +120,7 @@ const ExpenseList = () => {
                 "paid": false,
                 "paymentDate": null
             }
-        )
+        ])
     }
 
     return (
@@ -141,7 +142,9 @@ const ExpenseList = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {expenses.map(expense => <ExpenseRow key={expense.id} expense={expense} /> )}
+                    {expenses.map((expense) => (
+                        <ExpenseRow key={expense.id} expense={expense} />
+                    ))}
                 </tbody>
             </table>
             <button onClick={addExpense} className='btn btn-primary'>
