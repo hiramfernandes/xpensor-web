@@ -1,12 +1,13 @@
-import viteLogo from '../assets/vite.svg'
+import viteLogo from '../assets/vite.svg';
+import dateFormatter from '../helpers/date-formatter';
+import { logo } from "./Expense.module.css";
 
 const Expense = ({ expense }) => {
     return (
         <div className="row">
             <div className="col-6">
-                {expense.expenseName + " - " + expense.id}
                 <div className="row">
-                    <img className='img-fluid'
+                    <img className={logo}
                         src={viteLogo}
                         alt="House pic"
                     />
@@ -21,11 +22,11 @@ const Expense = ({ expense }) => {
                 </div>
                 <div className="row">
                     <h2 className="themeFontColor col-12">
-                        {expense.dueDate}
+                        {expense.expenseName}
                     </h2>
                 </div>
                 <div className="row">
-                    <div className="col-12 mt-3">{expense.paymentDate}</div>
+                    <div className="col-12 mt-3">{dateFormatter(expense.paymentDate)}</div>
                 </div>
             </div>
         </div>
