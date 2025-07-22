@@ -1,8 +1,8 @@
 import dateFormatter from "../helpers/date-formatter";
 
-const ExpenseRow = ({expense}) => {
+const ExpenseRow = ({expense, selectExpense}) => {
     return (
-        <tr>
+        <tr onClick={() => selectExpense(expense)} >
             <td>{expense.expenseName}</td>
             <td>{dateFormatter(expense.dueDate)}</td>
             <td>{expense.value}</td>

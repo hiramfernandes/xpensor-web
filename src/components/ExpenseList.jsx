@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import ExpenseRow from "./ExpenseRow"
 
-const ExpenseList = () => {
+const ExpenseList = ({selectExpense}) => {
     const [expenses, setExpenses] = useState([]);
 
     useEffect(() => {
@@ -48,7 +48,10 @@ const ExpenseList = () => {
                 </thead>
                 <tbody>
                     {expenses.map((expense) => (
-                        <ExpenseRow key={expense.id} expense={expense} />
+                        <ExpenseRow 
+                            key={expense.id} 
+                            expense={expense} 
+                            selectExpense={selectExpense} />
                     ))}
                 </tbody>
             </table>
