@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import ExpenseRow from "./ExpenseRow"
 
-const ExpenseList = ({selectExpense}) => {
+const ExpenseList = ({ selectExpense }) => {
     const [expenses, setExpenses] = useState([]);
 
     useEffect(() => {
-        const retrieveExpenses = async() => {
-            const response = await fetch('http://localhost:5213/api/Payments/get-monthly-report?month=7&year=2025');
+        const retrieveExpenses = async () => {
+            const response = await fetch("http://localhost:5213/api/Expenses/get-monthly-report?month=7&year=2025");
             const expenses = await response.json();
-            
+
             setExpenses(expenses);
         };
         retrieveExpenses();
@@ -48,9 +48,9 @@ const ExpenseList = ({selectExpense}) => {
                 </thead>
                 <tbody>
                     {expenses.map((expense) => (
-                        <ExpenseRow 
-                            key={expense.id} 
-                            expense={expense} 
+                        <ExpenseRow
+                            key={expense.id}
+                            expense={expense}
                             selectExpense={selectExpense} />
                     ))}
                 </tbody>
